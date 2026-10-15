@@ -15,7 +15,7 @@
 <header>
   <a class="brand" href="#top"><b>GP</b><span id="brandName">Portfolio</span></a>
   <nav id="nav"><a href="#works">Works</a><a href="#skills">Skills</a><a href="#activity">Activity</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-  <div class="header-actions"><button id="editButton" class="edit-btn">EDIT</button><button id="menuButton" class="menu-btn">☰</button></div>
+  <div class="header-actions"><button id="menuButton" class="menu-btn">☰</button></div>
 </header>
 
 <main id="top">
@@ -77,30 +77,6 @@ public:
 
 <footer class="wrap"><p>© <span id="year"></span> <span id="footerName"></span></p><a href="#top">Back to top ↑</a></footer>
 
-<dialog id="editorDialog">
-<form method="dialog" class="editor">
-  <div class="editor-head"><div><small>PORTFOLIO EDITOR</small><h2>サイト内容を編集</h2></div><button value="cancel" class="close">×</button></div>
-  <p class="note">変更はこのブラウザに保存できます。公開サイトを更新する場合は「data.jsを書き出す」で取得したファイルを差し替えて再公開してください。</p>
-  <div class="tabs"><button type="button" class="tab active" data-tab="basic">基本情報</button><button type="button" class="tab" data-tab="works">作品</button><button type="button" class="tab" data-tab="activity">実績</button><button type="button" class="tab" data-tab="json">JSON</button></div>
-  <div class="editor-body">
-    <section class="page active" data-page="basic">
-      <div class="form-grid">
-        <label>表示名<input id="editName"></label><label>イニシャル<input id="editInitials"></label>
-        <label>肩書き<input id="editRole"></label><label>学校<input id="editSchool"></label>
-        <label>専攻<input id="editCourse"></label><label>活動地域<input id="editLocation"></label>
-        <label class="wide">トップ説明<textarea id="editHeroText" rows="4"></textarea></label>
-        <label class="wide">自己紹介<textarea id="editAboutText" rows="5"></textarea></label>
-        <label>メール<input id="editEmail" type="email"></label><label>GitHub URL<input id="editGithub"></label>
-        <label>X URL<input id="editX"></label><label>その他URL<input id="editWebsite"></label>
-      </div>
-    </section>
-    <section class="page" data-page="works"><div id="worksEditor"></div><button type="button" class="add" id="addWork">＋ 作品を追加</button></section>
-    <section class="page" data-page="activity"><div id="activityEditor"></div><button type="button" class="add" id="addActivity">＋ 実績を追加</button></section>
-    <section class="page" data-page="json"><textarea id="jsonEditor" class="json" rows="22"></textarea><button type="button" class="btn secondary" id="applyJson">JSONを反映</button></section>
-  </div>
-  <div class="editor-foot"><button type="button" class="btn secondary" id="resetData">初期データに戻す</button><div><button type="button" class="btn secondary" id="exportData">data.jsを書き出す</button><button type="button" class="btn primary" id="saveData">保存して反映</button></div></div>
-</form>
-</dialog>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
