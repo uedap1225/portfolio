@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ゲームプログラマーを目指す学生のポートフォリオ。C++ / DXライブラリ / Unityを中心に制作したゲーム、技術、活動実績を掲載しています。">
+<title>Game Programmer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<header>
+  <a class="brand" href="#top"><b>GP</b><span id="brandName">Portfolio</span></a>
+  <nav id="nav"><a href="#works">Works</a><a href="#skills">Skills</a><a href="#activity">Activity</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <div class="header-actions"><button id="editButton" class="edit-btn">EDIT</button><button id="menuButton" class="menu-btn">☰</button></div>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <div>
+    <p class="eyebrow" id="heroEyebrow"></p>
+    <h1><span id="heroLine1"></span><br><em id="heroLine2"></em></h1>
+    <p class="lead" id="heroText"></p>
+    <div class="buttons"><a class="btn primary" href="#works">作品を見る</a><a class="btn secondary" href="#contact">Contact</a></div>
+    <div class="tags" id="heroTags"></div>
+  </div>
+  <div class="hero-card">
+    <div class="status"><i></i> PORTFOLIO / GAME PROGRAMMER</div>
+    <div class="code">
+      <div class="dots">● ● ●</div>
+      <pre><span>// build fun with code</span>
+class GameProgrammer {
+public:
+  Create("gameplay");
+  Improve("controls");
+  Design("systems");
+};</pre>
+    </div>
+    <div class="stats" id="heroStats"></div>
+  </div>
+</section>
+
+<section class="focus wrap">
+  <div><small>FOCUS</small><strong>操作感 × 仕組み × 改善</strong></div>
+  <p id="focusText"></p>
+</section>
+
+<section class="wrap section" id="works">
+  <div class="section-head"><div><p class="eyebrow">SELECTED WORKS</p><h2>制作作品</h2></div><p>プログラムだけでなく、遊びやすさやルール設計まで含めて改善しています。</p></div>
+  <div class="works" id="worksGrid"></div>
+</section>
+
+<section class="wrap section split" id="skills">
+  <div class="section-head vertical"><div><p class="eyebrow">SKILLS</p><h2>技術・得意分野</h2></div><p>現在の制作で使用している技術と、これから伸ばしている領域です。</p></div>
+  <div class="skills" id="skillsGrid"></div>
+</section>
+
+<section class="wrap section" id="activity">
+  <div class="section-head"><div><p class="eyebrow">ACTIVITY</p><h2>活動・実績</h2></div><p>展示、制作、学習などの活動を時系列でまとめています。</p></div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section class="wrap section" id="about">
+  <div class="about">
+    <div class="profile-card"><div class="avatar" id="profileInitials">GP</div><div><p class="eyebrow">PROFILE</p><h2 id="profileName"></h2><p id="profileRole"></p></div></div>
+    <div class="about-card"><h3 id="aboutTitle"></h3><p id="aboutText"></p><div class="details" id="detailGrid"></div></div>
+  </div>
+</section>
+
+<section class="wrap section" id="contact">
+  <div class="contact-card"><div><p class="eyebrow">CONTACT</p><h2>作品・活動についてのご連絡</h2><p id="contactText"></p></div><div id="contactActions" class="contact-actions"></div></div>
+</section>
+</main>
+
+<footer class="wrap"><p>© <span id="year"></span> <span id="footerName"></span></p><a href="#top">Back to top ↑</a></footer>
+
+<dialog id="editorDialog">
+<form method="dialog" class="editor">
+  <div class="editor-head"><div><small>PORTFOLIO EDITOR</small><h2>サイト内容を編集</h2></div><button value="cancel" class="close">×</button></div>
+  <p class="note">変更はこのブラウザに保存できます。公開サイトを更新する場合は「data.jsを書き出す」で取得したファイルを差し替えて再公開してください。</p>
+  <div class="tabs"><button type="button" class="tab active" data-tab="basic">基本情報</button><button type="button" class="tab" data-tab="works">作品</button><button type="button" class="tab" data-tab="activity">実績</button><button type="button" class="tab" data-tab="json">JSON</button></div>
+  <div class="editor-body">
+    <section class="page active" data-page="basic">
+      <div class="form-grid">
+        <label>表示名<input id="editName"></label><label>イニシャル<input id="editInitials"></label>
+        <label>肩書き<input id="editRole"></label><label>学校<input id="editSchool"></label>
+        <label>専攻<input id="editCourse"></label><label>活動地域<input id="editLocation"></label>
+        <label class="wide">トップ説明<textarea id="editHeroText" rows="4"></textarea></label>
+        <label class="wide">自己紹介<textarea id="editAboutText" rows="5"></textarea></label>
+        <label>メール<input id="editEmail" type="email"></label><label>GitHub URL<input id="editGithub"></label>
+        <label>X URL<input id="editX"></label><label>その他URL<input id="editWebsite"></label>
+      </div>
+    </section>
+    <section class="page" data-page="works"><div id="worksEditor"></div><button type="button" class="add" id="addWork">＋ 作品を追加</button></section>
+    <section class="page" data-page="activity"><div id="activityEditor"></div><button type="button" class="add" id="addActivity">＋ 実績を追加</button></section>
+    <section class="page" data-page="json"><textarea id="jsonEditor" class="json" rows="22"></textarea><button type="button" class="btn secondary" id="applyJson">JSONを反映</button></section>
+  </div>
+  <div class="editor-foot"><button type="button" class="btn secondary" id="resetData">初期データに戻す</button><div><button type="button" class="btn secondary" id="exportData">data.jsを書き出す</button><button type="button" class="btn primary" id="saveData">保存して反映</button></div></div>
+</form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body></html>
